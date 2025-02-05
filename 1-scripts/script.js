@@ -497,14 +497,6 @@ function descargarArchivosFirefox() {
     } else if (indiceArchivos == 16) {
         n8Img = loadImage('2-imagenes/n8.jpg?n=3', continuarDescargaFirefox);
     } else if (indiceArchivos == 17) {
-        /*var n8TrailerF = cE('video', document.body);
-        n8TrailerF.src = '4-videos/n8t.mp4?n=3';
-        n8TrailerF.oncanplay = function()
-        {
-        	n8Trailer = createVideo('4-videos/n8t.mp4?n=3');
-        	continuarDescargaFirefox();
-        };*/
-
         continuarDescargaFirefox();
     } else if (indiceArchivos == 18) {
         n8FondoVF = cE('video', document.body);
@@ -517,14 +509,6 @@ function descargarArchivosFirefox() {
     } else if (indiceArchivos == 19) {
         pandemicImg = loadImage('2-imagenes/pandemic.jpg?n=3', continuarDescargaFirefox);
     } else if (indiceArchivos == 20) {
-        /*var pandemicTrailerF = cE('video', document.body);
-        pandemicTrailerF.src = '4-videos/pandemict.mp4?n=3';
-        pandemicTrailerF.oncanplay = function()
-        {
-        	pandemicTrailer = createVideo('4-videos/pandemict.mp4?n=3');
-        	continuarDescargaFirefox();
-        };*/
-
         continuarDescargaFirefox();
     } else if (indiceArchivos == 21) {
         var pandemicFondoVF = cE('video', document.body);
@@ -537,14 +521,6 @@ function descargarArchivosFirefox() {
     } else if (indiceArchivos == 22) {
         promesaImg = loadImage('2-imagenes/promesa.png?n=3', continuarDescargaFirefox);
     } else if (indiceArchivos == 23) {
-        /*var promesaTrailerF = cE('video', document.body);
-        promesaTrailerF.src = '4-videos/promesat.mp4?n=3';
-        promesaTrailerF.oncanplay = function()
-        {
-        	promesaTrailer = createVideo('4-videos/promesat.mp4?n=3');
-        	continuarDescargaFirefox();
-        };*/
-
         continuarDescargaFirefox();
     } else if (indiceArchivos == 24) {
         var promesaFondoVF = cE('video', document.body);
@@ -568,7 +544,7 @@ function descargarArchivosFirefox() {
         };
     } else if (indiceArchivos == 28) {
         nieblaV = cE('video', document.body);
-        nieblaV.src = '4-videos/https://res.cloudinary.com/dlmutdhbp/video/upload/v1738765608/niebla_wqjvoi.mp4?n=3';
+        nieblaV.src = 'https://res.cloudinary.com/dlmutdhbp/video/upload/v1738765608/niebla_wqjvoi.mp4?n=3';
         nieblaV.oncanplay = continuarDescargaFirefox;
     } else if (indiceArchivos == 29) {
         audioIntro = new Audio();
