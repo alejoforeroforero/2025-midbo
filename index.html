@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sueños Distantes</title>
+        <meta charset="utf-8"> 
+        <meta name="description" content="Sueños Distantes, exposición virtual curada por Previsión Colectiva y realizada en el marco de la 22 MIDBO, en la Sala virtual de la Galería Santa Fe."/> 
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+        <meta http-equiv="Pragma" content="no-cache"/>
+        <meta http-equiv="expires" content="Tue, 24 Jun 2020 19:52:00 GMT" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+        <meta property="og:site_name" content="Sueños Distantes"/>
+        <meta property="og:image" content="http://suenosdistantes.com/2-imagenes/cartel1.jpg?n=2"/>
+        <link rel="image_src" href="http://suenosdistantes.com/2-imagenes/cartel1.jpg?n=2">        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-NERVB8C0SR"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());        
+          gtag('config', 'G-NERVB8C0SR');
+        </script>   
+	</head>
+
+<body onLoad="bajarScripts()">
+
+<div id="descargando">Descargando archivos</div>
+
+</body>
+
+<script>
+
+var scripts = 
+[	
+	'1-scripts/html.js?n=119',	
+	'1-scripts/script.js?n=119',
+	'1-scripts/funciones.js?n=119',
+	'1-scripts/elementos.js?n=119',
+	'1-scripts/eventos.js?n=119',
+	'1-scripts/classes.js?n=119',
+	'1-scripts/p5.js?n=119'
+]
+
+var indiceScripts = 0;
+
+function bajarScripts()
+{
+	var script = scripts[indiceScripts];
+		
+	var req = new XMLHttpRequest();
+	req.open('GET', script);
+	req.responseType = 'blob';
+	
+	req.onload = function(event) 
+	{ 			  
+	   if (this.status === 200) 
+	   {						
+			var scriptSrc = URL.createObjectURL(this.response); 
+			
+			var scriptObj = document.createElement('script');
+			scriptObj.src = scriptSrc;
+			
+			document.getElementsByTagName('head')[0].appendChild(scriptObj);		
+			
+			indiceScripts++;
+			
+			if(indiceScripts == scripts.length)
+			{
+				correr();
+			}
+			else
+			{
+				bajarScripts();
+			}			
+	   }
+	}
+	
+	req.onerror = function() 
+	{
+	   console.log('hubo un error con un Script');
+	}
+	req.send();			
+}
+
+function correr()
+{	
+	Explorador.pc =  (esCelular.cualquiera()) ? false : true;	
+
+	if(Explorador.pc)
+	{
+		if(Explorador.browser == "Chrome")
+		{
+			bajarCss();
+		}
+		else
+		{
+			bajarCss();
+		}	
+	}
+	else
+	{
+		bajarCss();
+	}
+}
+
+function bajarCss()
+{
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', '1-scripts/estilos.css?n=119');
+	xhr.onreadystatechange = function () 
+	{
+		if (this.readyState == 4 && this.status == 200) 
+		{ 		
+			xhr.onreadystatechange = null;
+			
+			var style = document.createElement('style');
+			style.type = 'text/css';
+			style.innerHTML = this.responseText;
+			document.getElementsByTagName('head')[0].appendChild(style);
+			
+			contruirProyectoJS();
+		}
+	};
+	xhr.send();	
+};
+
+var construirPc = null;
+
+function contruirProyectoJS()
+{	
+	setTimeout(function()
+	{
+		console.log('n=119');
+		
+		if(construirPc)
+		{	
+			construirPc();		
+		}
+		else
+		{
+			contruirProyectoJS();
+		}
+	}, 200);
+}
+
+</script>
+
+</html>
